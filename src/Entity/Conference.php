@@ -10,7 +10,7 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\String\Slugger\SluggerInterface;
 
 #[ORM\Entity(repositoryClass: ConferenceRepository::class)]
-#[UniqueEntity('slug')]
+#[UniqueEntity('conference')]
 class Conference
 {
     #[ORM\Id]
@@ -32,7 +32,7 @@ class Conference
 
     // #[ORM\Column(length: 255)]
     #[ORM\Column(length: 255, unique: true)]
-    private ?string $slug = null;
+    private ?string $conference = null;
 
     public function __construct()
     {
@@ -123,14 +123,14 @@ class Conference
         return $this;
     }
 
-    public function getSlug(): ?string
+    public function getConference(): ?string
     {
-        return $this->slug;
+        return $this->conference;
     }
 
-    public function setSlug(string $slug): self
+    public function setConference(string $conference): self
     {
-        $this->slug = $slug;
+        $this->conference = $conference;
 
         return $this;
     }
