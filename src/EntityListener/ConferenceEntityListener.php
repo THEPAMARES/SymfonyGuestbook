@@ -1,3 +1,5 @@
+<?php
+
 namespace App\EntityListener;
 
 use App\Entity\Conference;
